@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Poor+Story&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0; /* 기본 마진 제거 => body말고 *에 주어야 위도 공간 없어짐*/
+
+      font-family: "Noto Sans KR", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 1000;
+      font-style: normal;
+    }
+
+    body {
+      background-color: beige;
+      min-height: 100vh;
+      /* % , vh 공부하기 */
+    }
+
+    header {
+      background-color: #5B443D;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    h1{
+      color: rgba(255, 255, 255, 0.642);
+    }
+
+    label{
+      margin: 10px 20px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    input{
+      border-radius: 5px;
+      padding: 0px 10px;
+
+    }
+    button{
+      margin: 0px 10px;
+      width: 100px;
+      height:50px;
+      border-radius: 5px;
+    }
+
+    form {
+      display: flex;
+      padding: 20px;
+      /* flex 다시공부 */
+      justify-content: center;
+      background-color: #CD6958;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-items: center; /* 그리드 내부의 엘리먼트들의 가로 정렬 */
+      /*place-items: center;*/ /* 그리드 내부의 엘리먼트들이 상하 좌우로 가운데 정렬 */
+      /* 그리드 공부하기 */
+      padding: 10px;
+      row-gap: 10px;
+
+      /* row의 간격을 10px로 */
+      column-gap: 20px;
+      /* column의 간격을 20px로 */
+      background-image: url('example1.webp');
+      background-size: 100% 100%;
+      padding-top: 20px;
+
+    }
+
+    .movieItem {
+      background-color: #CEA987;
+      border-color: #CDCFCC;
+      border-radius: 10px;
+      border-style: solid;
+      padding: 20px;
+      margin: 10px 0px;
+      width: 400px;
+      text-align: center; /* div 자식요소들을 가운데 정렬*/
+    }
+
+    img {
+      padding-bottom: 10px;
+      height: 500px;
+      width: 350px;
+    }
+    p{
+      padding: 10px 0px  ;
+    }
