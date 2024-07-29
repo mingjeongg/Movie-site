@@ -20,6 +20,7 @@
   <div class="container"></div>
 
   <script>
+
     //fetch request
     const options = {
         method: "GET",
@@ -66,10 +67,24 @@
       .catch((err) => console.error(err));
 
 
-        // 검색 기능
-          document.getElementById("movieBtn").addEventListener("click", (e)=> {
-          e.preventDefault;
+        // 마우스 클릭
+        document.getElementById("movieBtn").addEventListener("click", (e)=> {
+          e.preventDefault();
+          search();
+          
+        })
 
+        // 엔터키 클릭
+        window.addEventListener("keydown" ,(e) => {
+          if(e.keyCode === 13){
+            e.preventDefault();         
+            search();
+          }
+        })
+
+
+        //검색
+        function search(){
           // input값 가져오기
           const inputValue = document.getElementById('movieInput');
           const valInput = inputValue.value;
@@ -87,7 +102,6 @@
             const val = title.innerText;
             const valLow = val.toLocaleLowerCase();
             const valInputLow = valInput.toLocaleLowerCase();
-
             const isVisible = valLow.includes(valInputLow);
 
             if(isVisible){
@@ -97,7 +111,9 @@
             }
             
           })
-        })
+        }
+
+
   </script>
 </body>
 
