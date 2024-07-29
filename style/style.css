@@ -64,7 +64,7 @@
       /* row의 간격을 10px로 */
       column-gap: 20px;
       /* column의 간격을 20px로 */
-      background-image: url('example1.webp');
+      background-image: url('./assets/example1.webp');
       background-size: 100% 100%;
       padding-top: 20px;
 
