@@ -22,26 +22,39 @@
       display: flex;
       justify-content: center;
     }
-    h1{
+    /* h1{
       color: rgba(255, 255, 255, 0.642);
+    } */
+    #cinema{
+      height: 100px;
+      width: 100px;
     }
 
     label{
-      margin: 10px 20px;
+      margin: 20px 20px;
       font-weight: bold;
       font-size: 20px;
     }
 
     input{
-      border-radius: 5px;
+      /* border-radius: 5px; */
       padding: 0px 10px;
+      width: 300px;
+
+
+      background-color: white;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0px 8px 6px -6px #666
 
     }
     button{
       margin: 0px 10px;
-      width: 100px;
-      height:50px;
+      width: 70px;
+      height: 50px;
+      border: none;
       border-radius: 5px;
+      box-shadow: 0px 0px 5px #444
     }
 
     form {
@@ -54,7 +67,7 @@
 
     .container {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       justify-items: center; /* 그리드 내부의 엘리먼트들의 가로 정렬 */
       /*place-items: center;*/ /* 그리드 내부의 엘리먼트들이 상하 좌우로 가운데 정렬 */
       /* 그리드 공부하기 */
@@ -64,8 +77,8 @@
       /* row의 간격을 10px로 */
       column-gap: 20px;
       /* column의 간격을 20px로 */
-      background-image: url('./assets/example1.webp');
-      background-size: 100% 100%;
+      background-image: url("assets\background.png");
+      background-size: 100% 100%; 
       padding-top: 20px;
 
     }

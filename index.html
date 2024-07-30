@@ -4,22 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>영화 검색 사이트</title>
+  <link rel="stylesheet" href="./style/reset.css">
   <link rel="stylesheet" href="./style/style.css">
+  <script type="module" src="/src/main.js"></script>
 </head>
 <body>
 
   <header>
-    <h1>내배캠 최고 평점 영화 콜렉션</h1>
+    <figure><img src="assets/cinema.png" id="cinema" alt=""></figure>
   </header>
 
   <form class="search">
-    <label for="">영화검색 : </label>
     <input type="text" id="movieInput" placeholder="영화를 검색해주세요." autofocus/>
     <button id="movieBtn" type="button">검색</button>
   </form>
 
   <div class="container"></div>
-
-  <script src="/src/main.js"></script>
 </body>
 </html>
