@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // HTML 요소 변수로 가져오기.
+    // HTML 요소 변수로 가져오기
     const commentInput = document.getElementById("commentInput");
     const passwordInput = document.getElementById("passwordInput");
     const submitButton = document.getElementById("submitComment");
@@ -19,12 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const newComment = commentInput.value.trim();
         const newPassword = passwordInput.value.trim();
 
-        if(newComment.length < 4){
-            alert("내용을 5자 이상 입력해주세요!");
+        if(newComment.length < 2){
+            alert("내용을 3자 이상 입력해주세요!");
             return;
         }
-        if(newPassword.length < 4){
-            alert("비밀번호를 5자 이상 입력해주세요!");
+        if(newPassword.length < 2){
+            alert("비밀번호를 3자 이상 입력해주세요!");
             return;
         }
         const comments = getComments();
@@ -32,8 +32,31 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('comments', JSON.stringify(comments));
         commentInput.value = "";
         passwordInput.value = "";
+        displayList()
     }
 
-    //입력 받으면 클릭으로 댓글 추가
+    // 입력받은 comment 화면에 출력하는 함수
+    function displayList(){
+        const comments = getComments();
+        reviewList.innerHTML = '';
+
+        comments.forEach((comment, index) => {
+            const commentDiv = document.createElement('div');
+            commentDiv.className = 'comment';
+            commentDiv.innerHTML = `${comment.text}
+            <div class="comment-btn">
+                <button onclick="editComment(${index})">수정</button>
+                <button onclick="deleteComment(${index})">삭제</button>
+            </div>`;
+        reviewList.appendChild(commentDiv);
+        })
+    }
+
+    //클릭으로 댓글 추가
     submitButton.addEventListener('click', addComment);
-})
+    
+    //리뷰 목록 보이기
+    displayList();
+
+
+});
