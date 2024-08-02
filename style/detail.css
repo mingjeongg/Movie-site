@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Permanent+Marker&display=swap");
+
+* {
+  margin: 0;
+  padding: 0; /* 기본 마진 제거 => body말고 *에 주어야 위도 공간 없어짐*/
+
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 1000;
+  font-style: normal;
+}
+
+.datailTitle {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
