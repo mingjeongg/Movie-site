@@ -74,6 +74,7 @@ window.addEventListener("keydown", (e) => {
     search();
   }
 });
+// 검색 버튼 누르지 않아도 검색이 되는 기능
 document.getElementById("movieInput").addEventListener("input", search);
 
 //=== 검색 함수 ===
