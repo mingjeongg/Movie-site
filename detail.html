@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./style/detail.css" />
-    <script type="module" src="./src/detail.js"></script>
-  </head>
-  <body>
-    <section class="detailBox"></section>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./style/detail.css" />
+  <script type="module" src="./src/detail.js"></script>
+  <script type="module" src="./src/review.js"></script>
+</head>
+
+<body>
+  <section class="detailBox"></section>
+  
+  <div id="ReviewForm">
+    <textarea id="commentInput" placeholder="감상평을 작성해주세요."></textarea><br>
+    <input type="password" id="passwordInput" placeholder="password">
+    <button id="submitComment">입력</button>
+    <div id="reviewList">
+    </div>
+  </div>
+</body>
 </html>

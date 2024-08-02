@@ -44,9 +44,9 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", opti
    if(e.target === container) return; //카드말고 그 외 영역(container) 클릭했을때 
 
    if(e.target.matches(".movieItem")){ // div클릭시
-    window.location.href =`http://127.0.0.1:5500/detail.html?id=${e.target.id}`;
+    window.location.href =`detail.html?id=${e.target.id}`;
    }else{ // div 안에 이미지, h태그 등 클릭 시 
-    window.location.href =`http://127.0.0.1:5500/detail.html?id=${e.target.parentNode.id}`;
+    window.location.href =`detail.html?id=${e.target.parentNode.id}`;
   }
 }
 
