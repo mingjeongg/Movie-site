@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>영화 검색 사이트</title>
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <script defer src="./src/test.js"></script>
+    <style>
+
+  .slideWrapper{
+    position:relative;
+    width: 90%;
+    margin:20px auto 0px auto;
+    height:500px;
+    overflow:hidden;
+  }
+
+  .slides{
+    display: flex;
+    position:absolute;
+    left:0;
+    top:0;
+    transition:left 0.5s ease-out;
+  }
+
+  .slides li:not(:last-child){
+    justify-content:flex-start;
+    margin-right:30px;
+  }
+  .prev{
+    font-size: 30px;
+    position: relative;
+    bottom: 250px;
+    left: 100px;
+  }
+  .next{
+    font-size: 30px;
+    position: relative;
+    bottom: 250px;
+    left: 100px;
+  }
+    </style>
+  </head>
+  <body>
+    <header>
+      <figure><img src="./assets/cinema.png" id="cinema" alt="" /></figure>
+    </header>
+
+    <form class="search">
+      <input
+        type="text"
+        id="movieInput"
+        placeholder="영화를 검색해주세요."
+        autofocus
+      />
+      <button id="movieBtn" type="button">검색</button>
+    </form>
+
+    <div class="slideWrapper">
+      <ul class="slides">
+      </ul>
+    </div>
+    <p class="controls">
+      <span class="prev"><</span>
+      <span class="next">></span>
+    </p>
+
+
+    <div class="container"></div>
+  </body>
+</html>
