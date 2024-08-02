@@ -10,8 +10,44 @@
   font-style: normal;
 }
 
+/* 상단바 */
+header {
+  margin: 15px 0 15px 30px;
+}
+
+body {
+  background-color: black;
+}
+
+a > img {
+  padding-bottom: 10px;
+  height: 60px;
+  width: 60px;
+}
+
+/* 영화정보 */
+.contentBox {
+  background-color: rgba(64, 65, 65, 0.2);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  margin: 0 200px;
+}
+
+.contentBox > img {
+  width: 350px;
+  height: 500px;
+}
+
+.detailcontents {
+  display: grid;
+  grid-template-rows: 120px 200px 1fr 1fr;
+  color: white;
+}
+
 .datailTitle {
   font-family: "Permanent Marker", cursive;
   font-weight: 400;
   font-style: normal;
+  font-size: 60px;
 }
