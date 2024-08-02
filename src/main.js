@@ -11,7 +11,7 @@ const options = {
 // 1. <div class="container"></div> 아래에 붙이기 위함
 // 2. 부모인 container에 클릭 이벤트 헨들러 심어놓기 위함
 const container = document.querySelector(".container");
-
+let originResults;
 // fetch로는 데이터를 바로 사용할 수 없다. fetch를 사용할 땐 두 단계를 거쳐야 한다.
 // 1. 올바른 url로 요청을 보내기
 // 2. 뒤에오는 응답에 대해 json()해주기
@@ -21,6 +21,8 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", opti
     console.log(data); //객체 {page: 1, results: Array(20), total_pages: 476, total_results: 9515}
 
     const { page, results, total_pages, total_results } = data; //구조분해할당
+
+    originResults = results;
     console.log("results : ", results); //배열 [{…}, {…}, {객체},  ..... , {…}, {…}]
 
     // container에 붙이기
@@ -116,3 +118,50 @@ function search() {
     });
   }
 }
+
+//스크롤 위치 표시
+
+//인기순 정렬
+document.querySelector("#label1").addEventListener("click", function () {
+  sortPopularity(originResults);
+});
+
+function sortPopularity(results) {
+  results.sort(function (a, b) {
+    return b.popularity - a.popularity;
+  });
+
+  container.innerHTML = results
+    .map(
+      (results) =>
+        `  <div class="movieItem" id="${results.id}">
+    <img src="https://image.tmdb.org/t/p/w500${results.poster_path}" alt="">
+  
+  </div>
+`
+    )
+    .join("");
+}
+
+// 최신순 정렬
+document.querySelector("#label2").addEventListener("click", function () {
+  sortNewest(originResults);
+});
+
+function sortNewest(results) {
+  results.sort(function (a, b) {
+    return new Date(b.release_date) - new Date(a.release_date);
+  });
+
+  container.innerHTML = results
+    .map(
+      (results) =>
+        `  <div class="movieItem" id="${results.id}">
+    <img src="https://image.tmdb.org/t/p/w500${results.poster_path}" alt="">
+
+  </div>
+`
+    )
+    .join("");
+}
+

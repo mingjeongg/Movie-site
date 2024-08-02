@@ -10,7 +10,7 @@
   </head>
   <body>
     <header>
-      <figure><img src="./assets/cinema.png" id="cinema" alt="" /></figure>
+      <figure><img src="assets/cinema.png" id="cinema" alt="" /></figure>
     </header>
 
     <form class="search">
@@ -20,8 +20,16 @@
         placeholder="영화를 검색해주세요."
         autofocus
       />
-      <button id="movieBtn" type="button">검색</button>
+      <button class="searchButton" id="movieBtn" type="button">검색</button>
     </form>
+
+    <div class="labels">
+      <div class="labelContainer">
+        <button id="label1">인기순</button>
+
+        <button id="label2">최신순</button>
+      </div>
+    </div>
 
     <div class="container"></div>
   </body>
