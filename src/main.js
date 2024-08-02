@@ -46,32 +46,12 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", opti
    if(e.target === container) return; //카드말고 그 외 영역(container) 클릭했을때 
 
    if(e.target.matches(".movieItem")){ // div클릭시
-    window.location.href =`http://127.0.0.1:5500/detail.html?id=${e.target.id}`;
+    window.location.href =`detail.html?id=${e.target.id}`;
    }else{ // div 안에 이미지, h태그 등 클릭 시 
-    window.location.href =`http://127.0.0.1:5500/detail.html?id=${e.target.parentNode.id}`;
+    window.location.href =`detail.html?id=${e.target.parentNode.id}`;
   }
 }
 
-
-// === 카드 클릭 시 id alert ===
-// 카드인 부모인 container에 클릭 이벤트 헨들러 심어놓고 모든 자식을 클릭할 때마다 id에 접근 가능
-//container.addEventListener("click", handleClickCard);
-
-// 이벤트 위임 : 하위요소에서 발생한 이벤트를 상위요소에서 처리하도록 해준다.(메모리 절약)
-// function handleClickCard(e){
-
-//   //카드(<div class="movieItem">) 외 영역 클릭 시 무시
-//   console.log("e.target :", e.target);
-//   console.log("e.currentTarget :", e.currentTarget);
-
-//   if(e.target === container) return; //카드말고 그 외 영역(container) 클릭했을때 
-
-//   if(e.target.matches(".movieItem")){
-//     alert(`Movie ID: ${e.target.id}`)
-//   }else{
-//     alert(`Movie ID: ${e.target.parentNode.id}`)
-//   }
-// }
 
 // === 마우스 클릭 ===
 document.getElementById("movieBtn").addEventListener("click", (e) => {
@@ -119,8 +99,6 @@ function search() {
   }
 }
 
-//스크롤 위치 표시
-
 //인기순 정렬
 document.querySelector("#label1").addEventListener("click", function () {
   sortPopularity(originResults);
@@ -164,4 +142,3 @@ function sortNewest(results) {
     )
     .join("");
 }
-
