@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Quicksand:wght@300..700&display=swap");
 
 * {
   margin: 0;
   padding: 0; /* 기본 마진 제거 => body말고 *에 주어야 위도 공간 없어짐*/
 
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
   font-weight: 1000;
   font-style: normal;
@@ -21,33 +21,60 @@ body {
 
 a > img {
   padding-bottom: 10px;
-  height: 60px;
-  width: 60px;
+  height: 80px;
+  width: 100px;
 }
 
 /* 영화정보 */
+.detailBox {
+  background-image: url(../assets/back.jpg);
+  background-size: 100% 100%;
+}
+
 .contentBox {
-  background-color: rgba(64, 65, 65, 0.2);
+  background-color: rgba(131, 132, 130, 0.608);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 550px 1fr;
   justify-items: center;
-  margin: 0 200px;
+  margin: 50px 200px 50px 200px;
+  border-radius: 10px 40px 80px 130px;
+  border: 3px solid transparent;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .contentBox > img {
   width: 350px;
   height: 500px;
+  margin: 30px 0;
+  border-radius: 10px 30px 50px 70px;
+  border: 3px solid transparent;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.contentBox:hover,
+.contentBox:focus,
+.contentBox > img:hover,
+.contentBox > img:focus {
+  box-shadow: 0 0 0 3px #f8f8f8b7;
 }
 
 .detailcontents {
   display: grid;
-  grid-template-rows: 120px 200px 1fr 1fr;
-  color: white;
+  grid-template-rows: 150px 70px 1fr;
+  align-items: center;
+  padding: 30px 50px 30px 30px;
+  font-size: 25px;
 }
 
 .datailTitle {
   font-family: "Permanent Marker", cursive;
   font-weight: 400;
   font-style: normal;
-  font-size: 60px;
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+  text-shadow: 6px 6px 0px rgb(22, 22, 22);
+}
+
+.date {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
