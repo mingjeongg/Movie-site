@@ -34,9 +34,9 @@ fetchMovieContent()
     <img src="https://image.tmdb.org/t/p/w500${results.poster_path}" alt="${results.title}">
         <div class="detailcontents">
         <h3 class="datailTitle">${results.title}</h3>
+        <p class="date">Release date : ${results.release_date}<span>Ratings : ${results.vote_average}</span></p>
         <p>${results.overview}</p>
-        <p>Release date : ${results.release_date}</p>
-        <p>Ratings : ${results.vote_average}</p></div></div>
+        </div></div>
       `;
   })
   .catch((err) => console.error(err));
