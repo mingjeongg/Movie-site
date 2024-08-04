@@ -19,7 +19,7 @@ async function fetchMovieContent() {
     },
   };
   const response = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
+    `https://api.themoviedb.org/3/movie/${id}?language=ko-KR`,
     options
   );
   const data = await response.json();
