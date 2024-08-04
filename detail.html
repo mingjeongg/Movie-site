@@ -13,12 +13,15 @@
 <body>
   <section class="detailBox"></section>
   
-  <div id="ReviewForm">
-    <textarea id="commentInput" placeholder="감상평을 작성해주세요."></textarea><br>
-    <input type="password" id="passwordInput" placeholder="password">
-    <button id="submitComment">입력</button>
-    <div id="reviewList">
+  <div class="comment-section">
+    <h2>review</h2>
+    <div class="comment-form">
+        <input type="text" id="nameInput" placeholder="이름">
+        <textarea id="commentInput" placeholder="내용"></textarea>
+        <input type="password" id="passwordInput" placeholder="비밀번호">
+        <button id="submitComment">댓글 작성</button>
     </div>
+    <div id="reviewList" class="comment-list"></div>
   </div>
 </body>
 </html>

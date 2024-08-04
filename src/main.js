@@ -15,7 +15,7 @@ const container = document.querySelector(".container");
 // fetch로는 데이터를 바로 사용할 수 없다. fetch를 사용할 땐 두 단계를 거쳐야 한다.
 // 1. 올바른 url로 요청을 보내기
 // 2. 뒤에오는 응답에 대해 json()해주기
-fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", options)
+fetch("https://api.themoviedb.org/3/movie/top_rated?language=ko-KR&page=1", options)
   .then((response) => response.json())
   .then((data) => {
     console.log(data); //객체 {page: 1, results: Array(20), total_pages: 476, total_results: 9515}
@@ -28,10 +28,10 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", opti
           `  <div class="movieItem" id="${results.id}">
         <img src="https://image.tmdb.org/t/p/w500${results.poster_path}" alt="">
           <h3 id="h3">${results.title}</h3>
-          <p>${results.overview}</p>
-          <p>평점 : ${results.vote_average}</p>
       </div>
     `
+//    <p>${results.overview}</p>
+//    <p>평점 : ${results.vote_average}</p>
       )
       .join("");
   })
