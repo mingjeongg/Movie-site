@@ -1,58 +1,80 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Permanent+Marker&display=swap");
 
 * {
   margin: 0;
   padding: 0; /* 기본 마진 제거 => body말고 *에 주어야 위도 공간 없어짐*/
 
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 1000;
+  font-weight: 500;
   font-style: normal;
 }
 
+/* 상단바 */
+header {
+  margin: 15px 0 15px 30px;
+}
+
 body {
-  background-color: beige;
+  background-color: black;
 }
 
+a > img {
+  padding-bottom: 10px;
+  height: 80px;
+  width: 100px;
+}
+
+/* 영화정보 */
 .detailBox {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #CEA987;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-image: url(../assets/back.jpg);
+  background-size: 100% 100%;
 }
 
-.detailBox img {
-    max-width: 100%;
-    border-radius: 8px;
+.contentBox {
+  background-color: rgba(131, 132, 130, 0.608);
+  display: grid;
+  grid-template-columns: 550px 1fr;
+  justify-items: center;
+  margin: 50px 200px 50px 200px;
+  border-radius: 10px 40px 80px 130px;
+}
+
+.contentBox > img {
+  width: 350px;
+  height: 500px;
+  margin: 30px 0;
+  border-radius: 10px 30px 50px 70px;
 }
 
 .detailcontents {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: 150px 70px 1fr;
+  align-items: center;
+  padding: 30px 50px 30px 30px;
+  font-size: 20px;
 }
 
 .datailTitle {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+  text-shadow: 6px 6px 0px rgb(22, 22, 22);
 }
 
-.detailcontents p {
-    font-size: 1em;
-    line-height: 1.5;
-    margin-bottom: 10px;
+.date {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
+/* 리뷰 */
 .comment-section {
   max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #CEA987;
+  background-color: #cea987;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -73,12 +95,11 @@ body {
 .comment-form input,
 .comment-form textarea {
   padding: 12px;
-  border: 1px solid #d6bfa7; 
+  border: 1px solid #d6bfa7;
   border-radius: 8px;
   font-size: 1em;
-  background-color: beige; 
+  background-color: beige;
   color: #333;
-  
 }
 
 .comment-form textarea {
@@ -98,14 +119,14 @@ body {
 }
 
 .comment-form button:hover {
-  background-color: #8c5e44; 
+  background-color: #8c5e44;
 }
 
 .comment-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  background-color: #f0e5d8; 
+  background-color: #f0e5d8;
   border-radius: 8px;
 }
 
@@ -137,7 +158,7 @@ body {
   margin-right: 10px;
   padding: 8px 15px;
   border: none;
-  background-color: #a87057; 
+  background-color: #a87057;
   color: #fff;
   border-radius: 8px;
   font-size: 0.9em;
@@ -146,7 +167,7 @@ body {
 }
 
 .comment-buttons button:hover {
-  background-color: #8c5e44; 
+  background-color: #8c5e44;
 }
 
 .comment-edit,
@@ -155,7 +176,7 @@ body {
   grid-template-columns: 1fr;
   gap: 10px;
   padding: 20px;
-  border: 1px solid #d6bfa7; 
+  border: 1px solid #d6bfa7;
   border-radius: 8px;
   background-color: #f0e5d8;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -165,17 +186,16 @@ body {
 .comment-edit input,
 .comment-delete input {
   padding: 12px;
-  border: 1px solid #d6bfa7; 
+  border: 1px solid #d6bfa7;
   border-radius: 8px;
   font-size: 1em;
-  background-color: beige; 
-  color: #333; 
+  background-color: beige;
+  color: #333;
 }
 
 .comment-edit textarea {
   resize: vertical;
   min-height: 100px;
-
 }
 
 .comment-edit button,
@@ -189,19 +209,19 @@ body {
 }
 
 .comment-edit button {
-  background-color: #a87057; 
+  background-color: #a87057;
   color: #fff;
 }
 
 .comment-edit button:hover {
-  background-color: #8c5e44; 
+  background-color: #8c5e44;
 }
 
 .comment-delete button {
-  background-color: #e57373; 
+  background-color: #e57373;
   color: #fff;
 }
 
 .comment-delete button:hover {
-  background-color: #c62828; 
+  background-color: #c62828;
 }

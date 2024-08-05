@@ -19,7 +19,7 @@ async function fetchMovieContent() {
     },
   };
   const response = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?language=ko-KR`,
+    `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
     options
   );
   const data = await response.json();
@@ -30,12 +30,13 @@ fetchMovieContent()
   .then((results) => {
     // 위 api에서 받아오는 영화정보 출력
     const detailBox = document.querySelector(".detailBox");
-    detailBox.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${results.poster_path}" alt="${results.title}">
+    detailBox.innerHTML = `<div class="contentBox">
+    <img src="https://image.tmdb.org/t/p/w500${results.poster_path}" alt="${results.title}">
         <div class="detailcontents">
         <h3 class="datailTitle">${results.title}</h3>
+        <p class="date">Release date : ${results.release_date}<span>Ratings : ${results.vote_average}</span></p>
         <p>${results.overview}</p>
-        <p>Release date : ${results.release_date}</p>
-        <p>Ratings : ${results.vote_average}</p></div>
+        </div></div>
       `;
   })
   .catch((err) => console.error(err));
