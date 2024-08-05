@@ -102,6 +102,7 @@ form {
   border: none;
   border-radius: 5px;
   box-shadow: 0px 0px 5px #444;
+  cursor: pointer;
 }
 
 form {
@@ -134,7 +135,7 @@ form {
   border-radius: 10px;
   border-style: solid;
   padding: 20px;
-  box-sizing:  border-box;
+  box-sizing: border-box;
   text-align: center;
 }
 
@@ -227,13 +228,11 @@ p {
 }
 
 .movieItem img,
-.slides li .movieImg 
- {
+.slides li .movieImg {
   transition: transform 0.2s ease-in-out;
 }
 
 .movieItem img:hover,
-.slides li .movieImg:hover
-{
-  transform: scale(1.1);
+.slides li .movieImg:hover {
+  transform: scale(1.038);
 }
