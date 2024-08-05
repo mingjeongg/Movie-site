@@ -30,13 +30,44 @@ fetchMovieContent()
   .then((results) => {
     // 위 api에서 받아오는 영화정보 출력
     const detailBox = document.querySelector(".detailBox");
-    detailBox.innerHTML = `<div class="contentBox">
-    <img src="https://image.tmdb.org/t/p/w500${results.poster_path}" alt="${results.title}">
+    detailBox.innerHTML = `
+ <div class="contentBox">
+        <img src="https://image.tmdb.org/t/p/w500${results.poster_path}" alt="${results.title}">
         <div class="detailcontents">
-        <h3 class="datailTitle">${results.title}</h3>
-        <p class="date">Release date : ${results.release_date}<span>Ratings : ${results.vote_average}</span></p>
-        <p>${results.overview}</p>
-        </div></div>
+          <h3 class="datailTitle">${results.title}</h3>
+          <p class="date">Release date : ${results.release_date}<span>Ratings : ${results.vote_average}</span></p>
+          <p>${results.overview}</p>
+          <div class="heart-icon">♡</div>
+        </div>
+      </div>
       `;
+      // 하트 이모티콘 클릭 이벤트 추가
+    const heartIcon = document.querySelector(".heart-icon");
+    heartIcon.addEventListener("click", () => {
+      // localStorage에서 영화 컬렉션 가져오기
+      let collection = JSON.parse(localStorage.getItem("movieCollection")) || [];
+      const movieIndex = collection.findIndex(item => item.id === results.id);
+
+      if (movieIndex === -1) {
+        // 컬렉션에 영화가 없는 경우 추가
+        collection.push(results);
+        localStorage.setItem("movieCollection", JSON.stringify(collection));
+        alert(`${results.title}이(가) 컬렉션에 추가되었습니다.`);
+        heartIcon.textContent = '❤️';
+      } else {
+        // 컬렉션에 영화가 있는 경우 제거
+        collection.splice(movieIndex, 1);
+        localStorage.setItem("movieCollection", JSON.stringify(collection));
+        alert(`${results.title}이(가) 컬렉션에서 제거되었습니다.`);
+        heartIcon.textContent = '♡';
+      }
+    });
+
+    // 초기 하트 이모티콘 설정
+    const collection = JSON.parse(localStorage.getItem("movieCollection")) || [];
+    if (collection.some(item => item.id === results.id)) {
+      heartIcon.textContent = '❤️';
+    }
   })
   .catch((err) => console.error(err));
+
