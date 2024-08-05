@@ -155,7 +155,7 @@ p {
 .slideWrapper {
   position: relative;
   width: 90%;
-  margin: 30px auto 0px auto;
+  margin: 50px auto 0px auto;
   height: 500px;
   overflow: hidden;
 }
@@ -173,13 +173,13 @@ p {
 .prev {
   font-size: 30px;
   position: absolute;
-  top: 500px;
+  top: 430px;
   left: 50px;
 }
 .next {
   font-size: 30px;
   position: absolute;
-  top: 500px;
+  top: 430px;
   right: 50px;
 }
 /* 스크롤 프로그래스 바*/
