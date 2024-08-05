@@ -62,8 +62,6 @@ function createSlide(resultList) {
   let prevBtn = document.querySelector(".prev");
   let nextBtn = document.querySelector(".next");
 
-
-
   slides.style.width =
     (slideWidth + slideMargin) * slideCount - slideMargin + "px";
 
@@ -72,11 +70,10 @@ function createSlide(resultList) {
     currentIdx = num;
   }
 
-
   nextBtn.addEventListener("click", function () {
     if (currentIdx < slideCount - 3) {
       moveSlide(currentIdx + 1);
-      console.log(currentIdx)
+      console.log("> 버튼 클릭 시 " ,currentIdx)
     } else {
       moveSlide(0);
     }
@@ -85,7 +82,7 @@ function createSlide(resultList) {
   prevBtn.addEventListener("click", function () {
     if (currentIdx > 0) {
       moveSlide(currentIdx - 1);
-      console.log(currentIdx)
+      console.log("< 버튼 클릭 시 " ,currentIdx)
     } else {
       moveSlide(slideCount - 3);
     }
