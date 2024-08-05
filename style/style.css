@@ -84,17 +84,6 @@ form {
   /* 영화 img 마우스 커서 바뀜 */
 }
 
-.movieItem {
-  background-color: #cea987;
-  border-color: #cdcfcc;
-  border-radius: 10px;
-  border-style: solid;
-  padding: 20px;
-  margin: 10px 0px;
-  width: 400px;
-  text-align: center; /* div 자식요소들을 가운데 정렬*/
-}
-
 .searchButton {
   margin: 0px 10px;
   width: 70px;
@@ -128,14 +117,18 @@ form {
   padding-top: 20px;
 }
 
+
+
 .movieItem {
   background-color: #cea987;
   border-color: #cdcfcc;
   border-radius: 10px;
   border-style: solid;
-  padding: 20px;
   box-sizing:  border-box;
-  text-align: center;
+  padding: 20px;
+  margin: 10px 0px;
+  width: 400px;
+  text-align: center; /* div 자식요소들을 가운데 정렬*/
 }
 
 img {
@@ -143,6 +136,16 @@ img {
   height: auto;
   width: 350px;
 }
+
+.hart-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
 p {
   padding: 10px 0px;
 }
