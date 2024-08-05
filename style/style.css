@@ -13,6 +13,7 @@
 body {
   background-color: beige;
   min-height: 100vh;
+  overflow-x: hidden;
   /* % , vh 공부하기 */
 }
 
@@ -71,7 +72,7 @@ form {
   /*place-items: center;*/ /* 그리드 내부의 엘리먼트들이 상하 좌우로 가운데 정렬 */
   /* 그리드 공부하기 */
   padding: 10px;
-  row-gap: 10px;
+  gap: 20px;
 
   /* row의 간격을 10px로 */
   column-gap: 20px;
@@ -113,12 +114,11 @@ form {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  justify-items: center; /* 그리드 내부의 엘리먼트들의 가로 정렬 */
-  /*place-items: center;*/ /* 그리드 내부의 엘리먼트들이 상하 좌우로 가운데 정렬 */
-  /* 그리드 공부하기 */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
   padding: 10px;
-  row-gap: 10px;
+  width: 100%;
+  overflow: hidden;
 
   /* row의 간격을 10px로 */
   column-gap: 20px;
@@ -134,14 +134,13 @@ form {
   border-radius: 10px;
   border-style: solid;
   padding: 20px;
-  margin: 10px 0px;
-  width: 400px;
-  text-align: center; /* div 자식요소들을 가운데 정렬*/
+  box-sizing:  border-box;
+  text-align: center;
 }
 
 img {
   padding-bottom: 10px;
-  height: 500px;
+  height: auto;
   width: 350px;
 }
 p {
@@ -227,9 +226,14 @@ p {
   background-color: #5b443d;
 }
 
-.movieItem img {
+.movieItem img,
+.slides li .movieImg 
+ {
   transition: transform 0.2s ease-in-out;
 }
-.movieItem img:hover {
+
+.movieItem img:hover,
+.slides li .movieImg:hover
+{
   transform: scale(1.1);
 }
