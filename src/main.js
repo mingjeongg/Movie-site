@@ -45,6 +45,7 @@ generateMovieCards();
 
 // ====슬라이드 생성 함수====
 function createSlide(resultList) {
+  
   slides.innerHTML = resultList
     .map(
       (results) =>
@@ -54,6 +55,7 @@ function createSlide(resultList) {
 
   const slide = document.querySelectorAll(".slides li");
   let currentIdx = 0;
+  console.log("currentIdx", currentIdx)
   let slideCount = slide.length;
   let slideWidth = 300;
   let slideMargin = 30;
@@ -71,6 +73,7 @@ function createSlide(resultList) {
   nextBtn.addEventListener("click", function () {
     if (currentIdx < slideCount - 3) {
       moveSlide(currentIdx + 1);
+      console.log("> 버튼 클릭 시 " ,currentIdx)
     } else {
       moveSlide(0);
     }
@@ -79,6 +82,7 @@ function createSlide(resultList) {
   prevBtn.addEventListener("click", function () {
     if (currentIdx > 0) {
       moveSlide(currentIdx - 1);
+      console.log("< 버튼 클릭 시 " ,currentIdx)
     } else {
       moveSlide(slideCount - 3);
     }
@@ -115,6 +119,7 @@ function handleClickSlideCard(e) {
 document.getElementById("movieBtn").addEventListener("click", (e) => {
   e.preventDefault();
   search();
+
 });
 
 // === 엔터키 클릭 ===
@@ -136,12 +141,11 @@ function search() {
   if (valInput === "") {
     alert("영화를 입력해주세요.");
   } else {
+
     // title 가져오기
     const titles = document.querySelectorAll("h3");
-
     // div영역 가져오기
     const items = document.querySelectorAll(".movieItem");
-    //console.log("itemDivs", items);
 
     titles.forEach((title, idx) => {
       const val = title.innerText;
@@ -173,7 +177,7 @@ function sortPopularity(results) {
       (results) =>
         `  <div class="movieItem" id="${results.id}">
   <img src="https://image.tmdb.org/t/p/w500${results.poster_path}" alt="">
-
+  <h3 id="h3" style ="display:none">${results.title}</h3>
 </div>
 `
     )
@@ -198,7 +202,7 @@ function sortNewest(results) {
       (results) =>
         `  <div class="movieItem" id="${results.id}">
   <img src="https://image.tmdb.org/t/p/w500${results.poster_path}" alt="">
-
+  <h3 id="h3" style ="display:none">${results.title}</h3>
 </div>
 `
     )
