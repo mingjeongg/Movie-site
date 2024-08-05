@@ -1,0 +1,19 @@
+#topBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  font-size: 20px;
+  border: none;
+  outline: 0.3rem solid;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  border-radius: 4px;
+  right: 30px;
+}
+
+#topBtn:hover {
+  background-color: darkgrey;
+}
+
+/* 업 버튼 CSS */
