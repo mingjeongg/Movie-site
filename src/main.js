@@ -1,3 +1,4 @@
+console.log("test");
 //fetch request
 async function fetchMovieData() {
   const options = {
