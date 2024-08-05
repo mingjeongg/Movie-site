@@ -72,7 +72,7 @@ function createSlide(resultList) {
   nextBtn.addEventListener("click", function () {
     if (currentIdx < slideCount - 3) {
       moveSlide(currentIdx + 1);
-      console.log(currentIdx);
+      console.log("> 버튼 클릭 시 ", currentIdx);
     } else {
       moveSlide(0);
     }
@@ -81,7 +81,7 @@ function createSlide(resultList) {
   prevBtn.addEventListener("click", function () {
     if (currentIdx > 0) {
       moveSlide(currentIdx - 1);
-      console.log(currentIdx);
+      console.log("< 버튼 클릭 시 ", currentIdx);
     } else {
       moveSlide(slideCount - 3);
     }
