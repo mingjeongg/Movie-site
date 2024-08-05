@@ -83,8 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="comment-edit">
             <textarea id="editComment_${index}">${comments[index].comment}</textarea>
             <input type="password" id="password_${index}" placeholder="비밀번호">
-            <button onclick="saveEdit(${index})">저장</button>
-            <button onclick="displayList()">취소</button>
+            <div class="comment-edit-buttons">
+                <button onclick="saveEdit(${index})">저장</button>
+                <button onclick="displayList()">취소</button>
+            </div>    
         </div>
         `;
     };
@@ -101,8 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
         commentDiv.innerHTML = `
         <div class="comment-delete">
             <input type="password" id="password_${index}" placeholder="비밀번호">
-            <button onclick="confirmDelete(${index})">삭제</button>
-            <button onclick="displayList()">취소</button>
+            <div class="comment-delete-buttons">
+                <button class="delete-butten" onclick="confirmDelete(${index})">삭제</button>
+                <button class="cancel-butten" onclick="displayList()">취소</button>
+            </dev>
         </div>
         `;
     };
