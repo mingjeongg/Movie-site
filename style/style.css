@@ -11,7 +11,7 @@
 }
 
 body {
-  background-color: beige;
+  background-color: black;
   min-height: 100vh;
   /* % , vh 공부하기 */
 }
@@ -61,7 +61,6 @@ form {
   padding: 20px;
   /* flex 다시공부 */
   justify-content: center;
-  background-color: #cd6958;
 }
 
 .container {
@@ -101,14 +100,6 @@ form {
   border: none;
   border-radius: 5px;
   box-shadow: 0px 0px 5px #444;
-}
-
-form {
-  display: flex;
-  padding: 20px;
-  /* flex 다시공부 */
-  justify-content: center;
-  background-color: #cd6958;
 }
 
 .container {
