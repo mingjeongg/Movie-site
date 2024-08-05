@@ -49,6 +49,7 @@ slides.innerHTML = resultList.map((results) =>
 ` <li><img src="https://image.tmdb.org/t/p/w500${results.poster_path}" id="${results.id}" class="movieImg"></li>`
   ).join("");
 
+
 const slide = document.querySelectorAll('.slides li');
 let currentIdx = 0;
 let slideCount = slide.length;
@@ -56,6 +57,8 @@ let slideWidth = 300;
 let slideMargin = 30;
 let prevBtn = document.querySelector('.prev');
 let nextBtn = document.querySelector('.next');
+
+console.log(slides.style.width)
 
 slides.style.width =
   (slideWidth + slideMargin) * slideCount - slideMargin + 'px';
@@ -111,6 +114,7 @@ window.location.href =`detail.html?id=${e.target.parentNode.id}`;
 // === 마우스 클릭 ===
 document.getElementById("movieBtn").addEventListener("click", (e) => {
 e.preventDefault();
+console.log("클릭")
 search();
 });
 
@@ -128,6 +132,9 @@ function search() {
 // input값 가져오기
 const inputValue = document.getElementById("movieInput");
 const valInput = inputValue.value;
+
+console.log("inputValue", inputValue)
+console.log("valInput", valInput)
 
 if (valInput === "") {
   alert("영화를 입력해주세요.");
