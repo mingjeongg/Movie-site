@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./style/detail.css" />
+  <script type="module" src="./src/detail.js"></script>
+  <script type="module" src="./src/review.js"></script>
+</head>
+
+<body>
+  <section class="detailBox"></section>
+  
+  <div class="comment-section">
+    <h2>review</h2>
+    <div class="comment-form">
+        <input type="text" id="nameInput" placeholder="이름">
+        <textarea id="commentInput" placeholder="내용"></textarea>
+        <input type="password" id="passwordInput" placeholder="비밀번호">
+        <button id="submitComment">댓글 작성</button>
+    </div>
+    <div id="reviewList" class="comment-list"></div>
+  </div>
+</body>
+</html>
