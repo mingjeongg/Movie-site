@@ -1,3 +1,4 @@
+console.log("test");
 //fetch request
 async function fetchMovieData() {
   const options = {
@@ -55,6 +56,7 @@ function createSlide(resultList) {
   const slide = document.querySelectorAll(".slides li");
   let currentIdx = 0;
   console.log("currentIdx", currentIdx);
+  console.log("currentIdx", currentIdx);
   let slideCount = slide.length;
   let slideWidth = 300;
   let slideMargin = 30;
@@ -73,6 +75,7 @@ function createSlide(resultList) {
     if (currentIdx < slideCount - 3) {
       moveSlide(currentIdx + 1);
       console.log("> 버튼 클릭 시 ", currentIdx);
+      console.log("> 버튼 클릭 시 ", currentIdx);
     } else {
       moveSlide(0);
     }
@@ -81,6 +84,7 @@ function createSlide(resultList) {
   prevBtn.addEventListener("click", function () {
     if (currentIdx > 0) {
       moveSlide(currentIdx - 1);
+      console.log("< 버튼 클릭 시 ", currentIdx);
       console.log("< 버튼 클릭 시 ", currentIdx);
     } else {
       moveSlide(slideCount - 3);
@@ -115,8 +119,9 @@ function handleClickSlideCard(e) {
 }
 
 // === 마우스 클릭 ===
-document.getElementById("movieBtn").addEventListener("click", (e) => {
+document.getElementById("searchBtn").addEventListener("click", (e) => {
   e.preventDefault();
+  console.log("클릭");
   search();
 });
 
