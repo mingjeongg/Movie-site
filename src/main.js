@@ -60,6 +60,8 @@ function createSlide(resultList) {
   let prevBtn = document.querySelector(".prev");
   let nextBtn = document.querySelector(".next");
 
+  console.log(slides.style.width);
+
   slides.style.width =
     (slideWidth + slideMargin) * slideCount - slideMargin + "px";
 
@@ -112,8 +114,9 @@ function handleClickSlideCard(e) {
 }
 
 // === 마우스 클릭 ===
-document.getElementById("searchBtn").addEventListener("click", (e) => {
+document.getElementById("movieBtn").addEventListener("click", (e) => {
   e.preventDefault();
+  console.log("클릭");
   search();
 });
 
@@ -132,6 +135,9 @@ function search() {
   // input값 가져오기
   const inputValue = document.getElementById("movieInput");
   const valInput = inputValue.value;
+
+  console.log("inputValue", inputValue);
+  console.log("valInput", valInput);
 
   if (valInput === "") {
     alert("영화를 입력해주세요.");
