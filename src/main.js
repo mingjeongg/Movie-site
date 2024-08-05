@@ -54,6 +54,7 @@ function createSlide(resultList) {
 
   const slide = document.querySelectorAll(".slides li");
   let currentIdx = 0;
+  console.log("currentIdx", currentIdx);
   let slideCount = slide.length;
   let slideWidth = 300;
   let slideMargin = 30;
@@ -71,6 +72,7 @@ function createSlide(resultList) {
   nextBtn.addEventListener("click", function () {
     if (currentIdx < slideCount - 3) {
       moveSlide(currentIdx + 1);
+      console.log("> 버튼 클릭 시 ", currentIdx);
     } else {
       moveSlide(0);
     }
@@ -79,6 +81,7 @@ function createSlide(resultList) {
   prevBtn.addEventListener("click", function () {
     if (currentIdx > 0) {
       moveSlide(currentIdx - 1);
+      console.log("< 버튼 클릭 시 ", currentIdx);
     } else {
       moveSlide(slideCount - 3);
     }
@@ -112,8 +115,9 @@ function handleClickSlideCard(e) {
 }
 
 // === 마우스 클릭 ===
-document.getElementById("movieBtn").addEventListener("click", (e) => {
+document.getElementById("searchBtn").addEventListener("click", (e) => {
   e.preventDefault();
+  console.log("클릭");
   search();
 });
 
@@ -133,15 +137,16 @@ function search() {
   const inputValue = document.getElementById("movieInput");
   const valInput = inputValue.value;
 
+  console.log("inputValue", inputValue);
+  console.log("valInput", valInput);
+
   if (valInput === "") {
     alert("영화를 입력해주세요.");
   } else {
     // title 가져오기
     const titles = document.querySelectorAll("h3");
-
     // div영역 가져오기
     const items = document.querySelectorAll(".movieItem");
-    //console.log("itemDivs", items);
 
     titles.forEach((title, idx) => {
       const val = title.innerText;
@@ -173,7 +178,7 @@ function sortPopularity(results) {
       (results) =>
         `  <div class="movieItem" id="${results.id}">
   <img src="https://image.tmdb.org/t/p/w500${results.poster_path}" alt="">
-
+  <h3 id="h3" style ="display:none">${results.title}</h3>
 </div>
 `
     )
@@ -198,7 +203,7 @@ function sortNewest(results) {
       (results) =>
         `  <div class="movieItem" id="${results.id}">
   <img src="https://image.tmdb.org/t/p/w500${results.poster_path}" alt="">
-
+  <h3 id="h3" style ="display:none">${results.title}</h3>
 </div>
 `
     )

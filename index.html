@@ -6,32 +6,45 @@
     <title>영화 검색 사이트</title>
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/topbtn.css" />
+    <script src="./src/topBtn.js"></script>
     <script type="module" src="./src/main.js"></script>
     <script type="module" src="./src/scroll.js"></script>
   </head>
+
   <body>
-    <div class="progressBar"><div class="bar"></div></div>
-    <header>
-      <figure><img src="./assets/cinema.png" id="cinema"  onclick="location.href='../test.html'"/></figure>
+    <div class="progressBar">
+      <div class="bar"></div>
+    </div>
+    <header class="headerBox">
+      <figure>
+        <img
+          src="./assets/homeIcon.png"
+          id="cinema"
+          onclick="location.href ='./index.html'"
+        />
+      </figure>
+      <form class="search">
+        <input
+          type="text"
+          id="movieInput"
+          placeholder="영화를 검색해주세요."
+          autofocus
+        />
+        <img id="searchBtn" src="./assets/search.png" />
+      </form>
     </header>
-    <form class="search">
-      <input
-        type="text"
-        id="movieInput"
-        placeholder="영화를 검색해주세요."
-        autofocus
-      />
-      <button class="searchButton" id="movieBtn" type="button">검색</button>
-    </form>
 
     <div class="slideWrapper">
-      <ul class="slides">
-      </ul>
+      <ul class="slides"></ul>
     </div>
     <p class="controls">
-      <span class="prev"><</span>
+      <span class="prev"> < </span>
       <span class="next">></span>
     </p>
+
+    <button id="topBtn" title="Go to top">TOP</button>
+    <!-- 업버튼 생성 -->
 
     <div class="labels">
       <div class="labelContainer">
@@ -41,6 +54,8 @@
       </div>
     </div>
 
+    <div class="container"></div>
+  </body>
     <div class="container"></div>
   </body>
 </html>

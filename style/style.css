@@ -11,14 +11,19 @@
 }
 
 body {
-  background-color: beige;
+  background-color: rgb(195, 195, 195);
   min-height: 100vh;
   overflow-x: hidden;
   /* % , vh 공부하기 */
 }
 
+.headerBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 header {
-  background-color: #5b443d;
+  background-color: black;
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -29,6 +34,7 @@ header {
 #cinema {
   height: 100px;
   width: 100px;
+  padding-left: 20px;
 }
 
 label {
@@ -37,17 +43,34 @@ label {
   font-size: 20px;
 }
 
-input {
-  /* border-radius: 5px; */
-  padding: 0px 10px;
-  width: 300px;
-
-  background-color: white;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0px 8px 6px -6px #666;
+/* 검색창 */
+.search {
+  display: flex;
+  position: relative;
+  text-align: center;
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
+input {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid #bbb;
+  margin: 10px 0;
+  padding: 10px 12px;
+}
+
+#searchBtn {
+  position: absolute;
+  right: 30px;
+  top: 33px;
+  margin: 0;
+  height: 45px;
+  width: 45px;
+}
+
+/* 탑버튼 */
 button {
   margin: 0px 10px;
   width: 70px;
@@ -57,27 +80,19 @@ button {
   box-shadow: 0px 0px 5px #444;
 }
 
-form {
-  display: flex;
-  padding: 20px;
-  /* flex 다시공부 */
-  justify-content: center;
-  background-color: #cd6958;
-}
-
 .container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  justify-items: center; /* 그리드 내부의 엘리먼트들의 가로 정렬 */
-  /*place-items: center;*/ /* 그리드 내부의 엘리먼트들이 상하 좌우로 가운데 정렬 */
-  /* 그리드 공부하기 */
-  padding: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
   gap: 20px;
+  padding: 10px;
+  width: 100%;
+  overflow: hidden;
 
   /* row의 간격을 10px로 */
   column-gap: 20px;
   /* column의 간격을 20px로 */
-  background-image: url("assets\background.png");
+
   background-size: 100% 100%;
   padding-top: 20px;
   cursor: pointer;
@@ -136,16 +151,6 @@ img {
   height: auto;
   width: 350px;
 }
-
-.hart-icon {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-}
-
 p {
   padding: 10px 0px;
 }
@@ -230,13 +235,11 @@ p {
 }
 
 .movieItem img,
-.slides li .movieImg 
- {
+.slides li .movieImg {
   transition: transform 0.2s ease-in-out;
 }
 
 .movieItem img:hover,
-.slides li .movieImg:hover
-{
+.slides li .movieImg:hover {
   transform: scale(1.1);
 }
