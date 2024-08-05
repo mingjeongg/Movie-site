@@ -100,15 +100,17 @@ button {
 }
 
 .movieItem {
-  background-color: #cea987;
-  border-color: #cdcfcc;
-  border-radius: 10px;
-  border-style: solid;
   padding: 20px;
   margin: 10px 0px;
   width: 400px;
   box-sizing: border-box;
   text-align: center; /* div 자식요소들을 가운데 정렬*/
+  border-radius: 35px;
+  border: none;
+}
+
+.movieItem > img {
+  border-radius: 35px;
 }
 
 img {
@@ -132,20 +134,7 @@ p {
   gap: 15px;
 }
 
-#label1 {
-  cursor: pointer;
-  background: inherit;
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 0;
-  overflow: visible;
-  font-size: 1em;
-}
-
-#label1:hover {
-  background-color: silver;
-}
+#label1,
 #label2 {
   cursor: pointer;
   background: inherit;
@@ -156,8 +145,10 @@ p {
   overflow: visible;
   font-size: 1em;
 }
+
+#label1:hover,
 #label2:hover {
-  background-color: silver;
+  background-color: rgb(134, 134, 134);
 }
 
 /* 슬라이드 */
@@ -207,4 +198,8 @@ p {
 .movieItem img:hover,
 .slides li .movieImg:hover {
   transform: scale(1.1);
+}
+
+.movieItem:hover {
+  box-shadow: 0 0 15px 5px white;
 }
