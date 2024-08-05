@@ -179,3 +179,10 @@ p {
   height: 10px;
   background-color: #5b443d;
 }
+
+.movieItem img {
+  transition: transform 0.2s ease-in-out;
+}
+.movieItem img:hover {
+  transform: scale(1.1);
+}
