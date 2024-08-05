@@ -115,7 +115,7 @@ function handleClickSlideCard(e) {
 }
 
 // === 마우스 클릭 ===
-document.getElementById("movieBtn").addEventListener("click", (e) => {
+document.getElementById("searchBtn").addEventListener("click", (e) => {
   e.preventDefault();
   console.log("클릭");
   search();
