@@ -99,50 +99,15 @@ button {
   /* 영화 img 마우스 커서 바뀜 */
 }
 
-.searchButton {
-  margin: 0px 10px;
-  width: 70px;
-  height: 50px;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px #444;
-}
-
-form {
-  display: flex;
-  padding: 20px;
-  /* flex 다시공부 */
-  justify-content: center;
-  background-color: #cd6958;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding: 10px;
-  width: 100%;
-  overflow: hidden;
-
-  /* row의 간격을 10px로 */
-  column-gap: 20px;
-  /* column의 간격을 20px로 */
-  background-image: url("assets\background.png");
-  background-size: 100% 100%;
-  padding-top: 20px;
-}
-
-
-
 .movieItem {
   background-color: #cea987;
   border-color: #cdcfcc;
   border-radius: 10px;
   border-style: solid;
-  box-sizing:  border-box;
   padding: 20px;
   margin: 10px 0px;
   width: 400px;
+  box-sizing: border-box;
   text-align: center; /* div 자식요소들을 가운데 정렬*/
 }
 
