@@ -16,15 +16,17 @@ async function fetchMovieData() {
     return data.results;
   }
 
-// 부모인 container에 클릭 이벤트 헨들러 심어놓기 위함
+
 const container = document.querySelector(".container"); 
-// ul 태그
-const slides = document.querySelector(".slides");
+const slides    = document.querySelector(".slides");  // ul 태그
+let originResults;
 
-
-
+// ====영화카드 생성====
 const generateMovieCards = async () => {
-    const movies = await fetchMovieData();
+    const movies = await fetchMovieData();  
+
+    // 슬라이드 생성
+    createSlide(movies)
     
     originResults = movies;
 
@@ -34,13 +36,54 @@ const generateMovieCards = async () => {
             <h3 id="h3" style ="display:none">${results.title}</h3>
         </div>
       `
-        )
-    .join("");
+    ).join("");
 }
 generateMovieCards();
 
 
-  // 메인 -> 상세
+
+// ====슬라이드 생성 함수====
+function createSlide(resultList){
+
+slides.innerHTML = resultList.map((results) => 
+  ` <li><img src="https://image.tmdb.org/t/p/w500${results.poster_path}" id="${results.id}" class="movieImg"></li>`
+    ).join("");
+
+  const slide = document.querySelectorAll('.slides li');
+  let currentIdx = 0;
+  let slideCount = slide.length;
+  let slideWidth = 300;
+  let slideMargin = 30;
+  let prevBtn = document.querySelector('.prev');
+  let nextBtn = document.querySelector('.next');
+  
+  slides.style.width =
+    (slideWidth + slideMargin) * slideCount - slideMargin + 'px';
+  
+  function moveSlide(num) {
+    slides.style.left = -num * 330 + 'px';
+    currentIdx = num;
+  }
+  
+  nextBtn.addEventListener('click', function () {
+    if( currentIdx < slideCount - 3){
+      moveSlide(currentIdx + 1);
+    }else{
+      moveSlide(0);
+    }   
+  });
+  
+  prevBtn.addEventListener('click', function () {
+    if( currentIdx > 0){
+      moveSlide(currentIdx - 1);
+    }else{
+      moveSlide(slideCount - 3);
+    }   
+  });
+
+}
+
+  // ==== 상세 페이지로 이동 =====
   container.addEventListener("click", handleClickCard);
   function handleClickCard(e){
    if(e.target === container) return; //카드말고 그 외 영역(container) 클릭했을때 
@@ -52,51 +95,17 @@ generateMovieCards();
   }
 }
 
+// 슬라이드 메인 -> 상세
+slides.addEventListener("click", handleClickSlideCard);
+function handleClickSlideCard(e){
+  if(e.target === slides) return; 
 
-
-
-// 슬라이드 생성
-const generateTopRatedSlide = async () => {
-  const movies = await fetchMovieData();
-
-slides.innerHTML = movies.map((results) => 
-    `  <li><img src="https://image.tmdb.org/t/p/w500${results.poster_path}" alt=""></li>`
-      ).join("");
-
-      const slide = document.querySelectorAll('.slides li');
-      currentIdx = 0;
-      slideCount = slide.length;
-      slideWidth = 300;
-      slideMargin = 30;
-      prevBtn = document.querySelector('.prev');
-      nextBtn = document.querySelector('.next');
-    
-    slides.style.width =
-      (slideWidth + slideMargin) * slideCount - slideMargin + 'px';
-    
-    function moveSlide(num) {
-      slides.style.left = -num * 330 + 'px';
-      currentIdx = num;
-    }
-    
-    nextBtn.addEventListener('click', function () {
-      if( currentIdx < slideCount - 3){
-        moveSlide(currentIdx + 1);
-      }else{
-        moveSlide(0);
-      }   
-    });
-    
-    prevBtn.addEventListener('click', function () {
-      if( currentIdx > 0){
-        moveSlide(currentIdx - 1);
-      }else{
-        moveSlide(slideCount - 3);
-      }   
-    });
-
+  if(e.target.matches(".movieImg")){ 
+  window.location.href =`detail.html?id=${e.target.id}`;
+  }else{ 
+  window.location.href =`detail.html?id=${e.target.parentNode.id}`;
+  }
 }
-generateTopRatedSlide();
 
 
 // === 마우스 클릭 ===
@@ -147,6 +156,7 @@ function search() {
 
 
 
+
 //인기순 정렬
 document.querySelector("#label1").addEventListener("click", function () {
   sortPopularity(originResults);
@@ -162,11 +172,15 @@ function sortPopularity(results) {
       (results) =>
         `  <div class="movieItem" id="${results.id}">
     <img src="https://image.tmdb.org/t/p/w500${results.poster_path}" alt="">
-  
+
   </div>
 `
     )
     .join("");
+
+    //슬라이드 생성(인기순)
+    createSlide(results);
+
 }
 
 // 최신순 정렬
@@ -189,4 +203,8 @@ function sortNewest(results) {
 `
     )
     .join("");
+
+    //슬라이드 생성(최신순)
+    createSlide(results);
+
 }

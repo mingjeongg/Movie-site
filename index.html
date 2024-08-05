@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/style.css" />
     <script type="module" src="./src/main.js"></script>
+    <script type="module" src="./src/scroll.js"></script>
   </head>
   <body>
+    <div class="progressBar"><div class="bar"></div></div>
     <header>
-      <figure><img src="assets/cinema.png" id="cinema" alt="" /></figure>
+      <figure><img src="./assets/cinema.png" id="cinema"  onclick="location.href='../test.html'"/></figure>
     </header>
     <form class="search">
       <input
@@ -22,6 +24,15 @@
       <button class="searchButton" id="movieBtn" type="button">검색</button>
     </form>
 
+    <div class="slideWrapper">
+      <ul class="slides">
+      </ul>
+    </div>
+    <p class="controls">
+      <span class="prev"><</span>
+      <span class="next">></span>
+    </p>
+
     <div class="labels">
       <div class="labelContainer">
         <button id="label1">인기순</button>
@@ -29,7 +40,7 @@
         <button id="label2">최신순</button>
       </div>
     </div>
- 
+
     <div class="container"></div>
   </body>
 </html>
