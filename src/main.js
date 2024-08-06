@@ -1,4 +1,3 @@
-console.log("test");
 //fetch request
 async function fetchMovieData() {
   const options = {
@@ -41,7 +40,6 @@ const generateMovieCards = async () => {
     )
     .join("");
 };
-
 generateMovieCards();
 
 // ====슬라이드 생성 함수====
@@ -128,7 +126,6 @@ function handleClickSlideCard(e) {
 // === 마우스 클릭 ===
 document.getElementById("searchBtn").addEventListener("click", (e) => {
   e.preventDefault();
-  console.log("클릭");
   search();
 });
 
@@ -139,6 +136,7 @@ window.addEventListener("keydown", (e) => {
     search();
   }
 });
+
 // 검색 버튼 누르지 않아도 검색이 되는 기능
 document.getElementById("movieInput").addEventListener("input", search);
 
@@ -147,7 +145,6 @@ function search() {
   // input값 가져오기
   const inputValue = document.getElementById("movieInput");
   const valInput = inputValue.value;
-
   const items = document.querySelectorAll(".movieItem");
 
   // 검색창이 빈창이면 alert창이 뜨면서 모든 카드 리스트들이 다시 보이기
