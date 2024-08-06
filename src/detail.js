@@ -1,11 +1,11 @@
-// window.location.search 로 키와 값 확인하기
+// window.location.search 로 클릭할 영화의 키와 값 확인하기 (?부터 시작하는 키 = 값)
 const myKeyValue = window.location.search;
-console.log("key & value:", myKeyValue);
+console.log("key & value:", myKeyValue); // ?id = 240
 
 // URL 검색매개변수(URLSearchParams)에 location.search를 인자로 넣어줌
 const URLSearch = new URLSearchParams(myKeyValue);
 
-// get으로 id값 가져오기
+// get으로 id 값만 가져오기
 let id = URLSearch.get("id");
 console.log("id:", id);
 
