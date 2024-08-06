@@ -167,14 +167,12 @@ input {
   position: absolute;
   top: 430px;
   left: 50px;
-  cursor: pointer;
 }
 .next {
   font-size: 30px;
   position: absolute;
   top: 430px;
   right: 50px;
-  cursor: pointer;
 }
 /* 스크롤 프로그래스 바*/
 .bar {
