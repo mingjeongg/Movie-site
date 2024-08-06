@@ -17,11 +17,6 @@ body {
   /* % , vh 공부하기 */
 }
 
-.headerBox {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
 header {
   background-color: black;
   padding: 20px;
@@ -34,41 +29,6 @@ header {
 #cinema {
   height: 100px;
   width: 100px;
-  padding-left: 70px;
-}
-
-label {
-  margin: 20px 20px;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-/* 검색창 */
-.search {
-  display: flex;
-  position: relative;
-  text-align: center;
-  width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-input {
-  width: 100%;
-  border-radius: 20px;
-  border: 1px solid #bbb;
-  margin: 10px 0;
-  padding: 10px 12px;
-}
-
-#searchBtn {
-  position: absolute;
-  right: 30px;
-  top: 35px;
-  margin: 0;
-  height: 40px;
-  width: 40px;
-  cursor: pointer;
 }
 
 /* 탑버튼 */
@@ -124,14 +84,45 @@ p {
 }
 
 .labels {
-  display: flex;
-  justify-content: flex-end;
-  padding: 30px 50px 30px 0px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
   font-size: 1.3em;
+}
+
+/* 검색창 */
+.search {
+  grid-column: 2 /3;
+  display: flex;
+  position: relative;
+  text-align: center;
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+input {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid #bbb;
+  margin: 10px 0;
+  padding: 10px 12px;
+}
+
+#searchBtn {
+  position: absolute;
+  right: 30px;
+  top: 33px;
+  margin: 0;
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
 }
 
 .labelContainer {
   display: flex;
+  justify-content: flex-end;
+  padding-right: 80px;
   gap: 15px;
 }
 
@@ -188,7 +179,7 @@ p {
   position: fixed;
   width: 100%;
   height: 10px;
-  background-color: #5b443d;
+  background-color: #ffc875;
 }
 
 .movieItem img,
