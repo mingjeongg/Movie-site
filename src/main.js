@@ -155,7 +155,7 @@ function search() {
     items.forEach((item) => {
       item.style.display = "block";
     });
-    alert("영화를 입력해주세요.");
+  //  alert("영화를 입력해주세요.");
   } else {
     // title 가져오기
     const titles = document.querySelectorAll("h3");

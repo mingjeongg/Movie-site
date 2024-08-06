@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem(`comments_${id}`, JSON.stringify(comments));
     };
 
-    // 댓글을 추가하기
+    // 댓글을 추가하기 및 유호성 검사
     const addComment = () => {
         const newName = nameInput.value.trim();
         const newComment = commentInput.value.trim();
