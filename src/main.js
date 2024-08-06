@@ -53,10 +53,15 @@ function createSlide(resultList) {
     )
     .join("");
 
+    //슬라이드 이동
+    slideMove(true)
+}
+
+// ====슬라이드 이동 함수====
+function slideMove(init){
+
   const slide = document.querySelectorAll(".slides li");
   let currentIdx = 0;
-  console.log("currentIdx", currentIdx);
-  console.log("currentIdx", currentIdx);
   let slideCount = slide.length;
   let slideWidth = 300;
   let slideMargin = 30;
@@ -71,11 +76,14 @@ function createSlide(resultList) {
     currentIdx = num;
   }
 
+  if(init){
+    moveSlide(0);
+    currentIdx = 0;
+  }
+
   nextBtn.addEventListener("click", function () {
     if (currentIdx < slideCount - 3) {
       moveSlide(currentIdx + 1);
-      console.log("> 버튼 클릭 시 ", currentIdx);
-      console.log("> 버튼 클릭 시 ", currentIdx);
     } else {
       moveSlide(0);
     }
@@ -84,13 +92,12 @@ function createSlide(resultList) {
   prevBtn.addEventListener("click", function () {
     if (currentIdx > 0) {
       moveSlide(currentIdx - 1);
-      console.log("< 버튼 클릭 시 ", currentIdx);
-      console.log("< 버튼 클릭 시 ", currentIdx);
     } else {
       moveSlide(slideCount - 3);
     }
   });
 }
+
 
 // ==== 상세 페이지로 이동 =====
 container.addEventListener("click", handleClickCard);
@@ -148,7 +155,7 @@ function search() {
     items.forEach((item) => {
       item.style.display = "block";
     });
-    //alert("영화를 입력해주세요.");
+  //  alert("영화를 입력해주세요.");
   } else {
     // title 가져오기
     const titles = document.querySelectorAll("h3");
