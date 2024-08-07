@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Permanent+Marker&display=swap");
+
+* {
+  margin: 0;
+  padding: 0; /* 기본 마진 제거 => body말고 *에 주어야 위도 공간 없어짐*/
+
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* 상단바 */
+header {
+  margin: 15px 0 15px 30px;
+}
+
+body {
+  background-color: black;
+}
+
+a > img {
+  padding-bottom: 10px;
+  height: 80px;
+  width: 100px;
+}
+
+/* 영화정보 */
+.detailBox {
+  background-image: url(../assets/back.jpg);
+  background-size: 100% 100%;
+}
+
+.contentBox {
+  background-color: rgba(131, 132, 130, 0.608);
+  display: grid;
+  grid-template-columns: 550px 1fr;
+  justify-items: center;
+  margin: 50px 200px 50px 200px;
+  border-radius: 10px 40px 80px 130px;
+}
+
+.contentBox > img {
+  width: 350px;
+  height: 500px;
+  margin: 30px 0;
+  border-radius: 10px 30px 50px 70px;
+}
+
+.detailcontents {
+  display: grid;
+  grid-template-rows: 150px 70px 1fr;
+  align-items: center;
+  padding: 30px 50px 30px 30px;
+  font-size: 20px;
+}
+
+.datailTitle {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+  text-shadow: 6px 6px 0px rgb(22, 22, 22);
+}
+
+.date {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* 리뷰 */
+.comment-section {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(131, 132, 130, 0.608);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.comment-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.comment-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.comment-form input,
+.comment-form textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  background-color: #fff;
+  color: #333;
+}
+
+.comment-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.comment-form button {
+  padding: 10px 15px; 
+  border: none;
+  background-color: rgba(131, 132, 130, 0.608);
+  color: #fff;
+  width: 95px;
+  border-radius: 8px;
+  font-size: 0.9em; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comment-form button:hover {
+  background-color: rgba(131, 132, 130, 0.8);
+}
+
+.comment-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(131, 132, 130, 0.608);
+  border-radius: 8px;
+}
+
+.comment {
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.comment strong {
+  font-size: 1.1em; 
+}
+
+.comment-info {
+  font-size: 0.85em; 
+  color: #777;
+  margin-top: 5px;
+}
+
+.comment-buttons {
+  margin-top: 10px;
+}
+
+.comment-edit-buttons,
+.comment-delete-buttons{
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.comment-buttons button {
+  margin-right: 8px; 
+  padding: 6px 12px; 
+  border: none;
+  background-color: rgba(131, 132, 130, 0.608);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.8em; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comment-buttons button:hover {
+  background-color: rgba(131, 132, 130, 0.8);
+}
+
+.comment-edit,
+.comment-delete {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: rgba(131, 132, 130, 0.608);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.comment-edit textarea,
+.comment-edit input,
+.comment-delete input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  background-color: #fff;
+  color: #333;
+}
+
+.comment-edit textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+
+.comment-edit button,
+.comment-delete button {
+  padding: 8px 12px; 
+  border: none;
+  width: 70px;
+  border-radius: 8px;
+  font-size: 0.9em; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comment-edit button {
+  background-color: rgba(131, 132, 130, 0.608);
+  color: #fff;
+}
+
+.comment-edit button:hover {
+  background-color: rgba(131, 132, 130, 1);
+}
+
+.comment-delete .delete-butten {
+  background-color: #e57373;
+  color: #fff;
+}
+
+.comment-delete .delete-butten:hover {
+  background-color: #c62828;
+}
+
+.comment-delete .cancel-butten {
+  background-color: rgba(131, 132, 130, 0.608);
+  color: #fff;
+}
+
+.comment-delete .cancel-butten:hover {
+  background-color: rgba(131, 132, 130, 1);
+}

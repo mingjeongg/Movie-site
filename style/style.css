@@ -1,104 +1,213 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Poor+Story&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Poor+Story&display=swap");
 
-    * {
-      margin: 0;
-      padding: 0; /* 기본 마진 제거 => body말고 *에 주어야 위도 공간 없어짐*/
+* {
+  margin: 0;
+  padding: 0; /* 기본 마진 제거 => body말고 *에 주어야 위도 공간 없어짐*/
 
-      font-family: "Noto Sans KR", sans-serif;
-      font-optical-sizing: auto;
-      font-weight: 1000;
-      font-style: normal;
-    }
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 1000;
+  font-style: normal;
+}
 
-    body {
-      background-color: beige;
-      min-height: 100vh;
-      /* % , vh 공부하기 */
-    }
+body {
+  background-color: rgb(195, 195, 195);
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* % , vh 공부하기 */
+}
 
-    header {
-      background-color: #5B443D;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-    }
-    /* h1{
+header {
+  background-color: black;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+/* h1{
       color: rgba(255, 255, 255, 0.642);
     } */
-    #cinema{
-      height: 100px;
-      width: 100px;
-    }
+#cinema {
+  height: 100px;
+  width: 100px;
+}
 
-    label{
-      margin: 20px 20px;
-      font-weight: bold;
-      font-size: 20px;
-    }
+/* 탑버튼 */
+button {
+  margin: 0px 10px;
+  width: 70px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #444;
+}
 
-    input{
-      /* border-radius: 5px; */
-      padding: 0px 10px;
-      width: 300px;
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 20px;
+  padding: 10px;
+  width: 100%;
+  overflow: hidden;
 
+  /* row의 간격을 10px로 */
+  column-gap: 20px;
+  /* column의 간격을 20px로 */
 
-      background-color: white;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0px 8px 6px -6px #666
+  background-size: 100% 100%;
+  padding-top: 20px;
+  cursor: pointer;
+  /* 영화 img 마우스 커서 바뀜 */
+}
 
-    }
-    button{
-      margin: 0px 10px;
-      width: 70px;
-      height: 50px;
-      border: none;
-      border-radius: 5px;
-      box-shadow: 0px 0px 5px #444
-    }
+.movieItem {
+  padding: 20px;
+  margin: 10px 0px;
+  width: 400px;
+  box-sizing: border-box;
+  text-align: center; /* div 자식요소들을 가운데 정렬*/
+  border-radius: 35px;
+  border: none;
+}
 
-    form {
-      display: flex;
-      padding: 20px;
-      /* flex 다시공부 */
-      justify-content: center;
-      background-color: #CD6958;
-    }
+.movieItem > img {
+  border-radius: 35px;
+}
 
-    .container {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      justify-items: center; /* 그리드 내부의 엘리먼트들의 가로 정렬 */
-      /*place-items: center;*/ /* 그리드 내부의 엘리먼트들이 상하 좌우로 가운데 정렬 */
-      /* 그리드 공부하기 */
-      padding: 10px;
-      row-gap: 10px;
+img {
+  padding-bottom: 10px;
+  height: auto;
+  width: 350px;
+}
+p {
+  padding: 10px 0px;
+}
 
-      /* row의 간격을 10px로 */
-      column-gap: 20px;
-      /* column의 간격을 20px로 */
-      background-image: url("assets\background.png");
-      background-size: 100% 100%; 
-      padding-top: 20px;
+.labels {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size: 1.3em;
+}
 
-    }
+/* 검색창 */
+.search {
+  grid-column: 2 /3;
+  display: flex;
+  position: relative;
+  text-align: center;
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-    .movieItem {
-      background-color: #CEA987;
-      border-color: #CDCFCC;
-      border-radius: 10px;
-      border-style: solid;
-      padding: 20px;
-      margin: 10px 0px;
-      width: 400px;
-      text-align: center; /* div 자식요소들을 가운데 정렬*/
-    }
+input {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid #bbb;
+  margin: 10px 0;
+  padding: 10px 12px;
+}
 
-    img {
-      padding-bottom: 10px;
-      height: 500px;
-      width: 350px;
-    }
-    p{
-      padding: 10px 0px  ;
-    }
+#searchBtn {
+  position: absolute;
+  right: 30px;
+  top: 33px;
+  margin: 0;
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+}
+
+.labelContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 80px;
+  gap: 15px;
+}
+
+#label1,
+#label2 {
+  cursor: pointer;
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  font-size: 1em;
+}
+
+#label1:hover,
+#label2:hover {
+  background-color: rgb(134, 134, 134);
+}
+
+/* 슬라이드 */
+.slideWrapper {
+  position: relative;
+  width: 90%;
+  margin: 50px auto 0px auto;
+  height: 500px;
+  overflow: hidden;
+}
+.slides {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: left 0.5s ease-out;
+}
+.slides li:not(:last-child) {
+  justify-content: flex-start;
+  margin-right: 30px;
+}
+.prev {
+  font-size: 30px;
+  position: absolute;
+  top: 430px;
+  left: 50px;
+  cursor: pointer;
+}
+.next {
+  font-size: 30px;
+  position: absolute;
+  top: 430px;
+  right: 50px;
+  cursor: pointer;
+}
+/* 스크롤 프로그래스 바*/
+.bar {
+  position: fixed;
+  width: 100%;
+  height: 10px;
+  background-color: #ffc875;
+}
+
+.movieItem img,
+.slides li .movieImg {
+  transition: transform 0.2s ease-in-out;
+}
+
+.movieItem img:hover,
+.slides li .movieImg:hover {
+  transform: scale(1.038);
+}
+
+.movieItem img:hover {
+  box-shadow: 0 0 15px 10px white;
+}
+
+footer {
+  border-top: 1px solid #ababab;
+  padding: 30px 0;
+  margin: 30px 0;
+}
+
+.teamName {
+  margin-top: 30px;
+  text-align: center;
+  line-height: 1.6;
+  color: #666;
+  font-size: 14px;
+}
